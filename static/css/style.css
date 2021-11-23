@@ -5,7 +5,7 @@
     font-family:'Noto Sans TC', sans-serif
 }
 body{
-    font-family:  'Noto Sans TC', sans-serif,'Noto Serif TC', serif,'EB Garamond', serif;
+    font-family:  'Noto Sans TC', sans-serif,'Noto Serif TC', serif,'Crimson Pro', serif;
     font-weight: 400;
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
@@ -16,12 +16,7 @@ body{
 :root {
     font-size: 10px;
 
-    --vblack:#666666;
-    --vblue:#7BAEBE;
-    --vYellow:#E8CB89;
-    --light_blue :#A6CDE0;
-    --vOrange:#F8C3A1;
-    --vGrey: #B4B4B4;
+    --bbGrey :#5A637E;
 
     
  
@@ -111,6 +106,71 @@ label{
 
 
 
+/* /////////////////// */
+.LandingPage{
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - 50px);
+    width: 100%;
+    background-color:red;
+   
+    background-image: url('../images/picBgPC.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 
 
+
+
+
+
+.LandingPage_bg{
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.circle_bg{
+    min-width: 1945px;
+    width: 1945px;
+    height:1945px;
+    border-radius: 100%;
+    margin-bottom: 120px;
+    box-shadow: 0 0 0 1945px white;
+}
+
+@media (max-width: 767px) { 
+
+
+    .LandingPage{
+        overflow: hidden;
+        position: relative;
+        height: calc(100vh - 50px);
+        width: 100%;
+        background-color:red;
+       
+        background-image: url('../images/picBgmobile.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    .circle_bg{
+        min-width: 753px;
+        width: 753px;
+        height:753px;
+        border-radius: 100%;
+        margin-bottom: 60px;
+        box-shadow: 0 0 0 753px white;
+    }
+
+
+}
