@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Noto Sans TC', sans-serif
+}
+body{
+    font-family:  'Noto Sans TC', sans-serif,'Noto Serif TC', serif,'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    line-height: 2; 
+ 
+}
+
+:root {
+    font-size: 10px;
+
+    --vblack:#666666;
+    --vblue:#7BAEBE;
+    --vYellow:#E8CB89;
+    --light_blue :#A6CDE0;
+    --vOrange:#F8C3A1;
+    --vGrey: #B4B4B4;
+
+    
+ 
+
+}
+
+ body a{
+    color:inherit;
+ }
+
+ body a:hover {
+    color:inherit;
+    text-decoration: none;
+}
+ 
+
+p {
+    font-size: 1.8rem;
+    margin: 0px;
+    padding: 0;
+}
+
+
+
+ul {
+    color:inherit;
+    text-decoration:none;
+    margin-bottom: 0;
+}
+
+li{
+    color:inherit;
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+}
+
+
+img{
+    width: 100%;
+}
+
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+input{
+    height: 50px;
+    background-color: #EBEBEB;
+    border-radius: 10px;
+    border: transparent;
+    padding-left: 10px;
+    
+}
+input:focus {
+    outline: none;
+}
+
+label{
+    margin: 0;
+}
+
+/* select{
+
+    height: 50px;
+    border-radius: 10px;
+    border: transparent;
+    padding-left: 10px;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+
+} */
+
+/* ////////////動畫//////////////////// */
+
+
+@media (max-width: 1025px) { }
+@media (max-width: 767px) { }
+
+
+
+
+
+
+
