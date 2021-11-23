@@ -249,7 +249,7 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-    --animate-duration: 1.4s
+    --animate-duration: 1s
 
 
 }
