@@ -69,23 +69,31 @@ button {
 button:focus {
     outline: none;
 }
+
+input::-webkit-calendar-picker-indicator {
+    transform: translateY(-5px);
+}
+input:focus {
+    outline: none;
+}
 input{
     height: 50px;
     background-color: #EBEBEB;
     border-radius: 10px;
     border: transparent;
-    padding-left: 10px;
+    padding:0 10px;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+  
     
-}
-input:focus {
-    outline: none;
 }
 
 label{
     margin: 0;
-}
+} 
 
-/* select{
+select{
 
     height: 50px;
     border-radius: 10px;
@@ -96,7 +104,7 @@ label{
     -webkit-appearance:none;
 
 
-} */
+}
 
 /* ////////////動畫//////////////////// */
 
@@ -109,6 +117,7 @@ label{
 
 /* /////////////////// */
 .LandingPage{
+   
     overflow: hidden;
     position: relative;
     height: calc(100vh - 50px);
@@ -122,7 +131,10 @@ label{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+
+    display: none;
 }
+
 
 
 
@@ -161,7 +173,7 @@ label{
     .LandingPage{
         overflow: hidden;
         position: relative;
-        height: calc(100vh - 50px);
+        
         width: 100%;
 
        
@@ -343,4 +355,9 @@ label{
 
 
 
+}
+
+
+#BusStatusPage{
+    /* display: none; */
 }

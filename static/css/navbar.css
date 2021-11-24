@@ -2,13 +2,17 @@
     position: fixed;
     z-index: 995;
     width: 100%;
+    /* height: 50px; */
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
 
    
 
 }
 
 .Navbar_grey{
-    /* background-color: var(--bbGrey) !important; */
+    background-color: var(--bbGrey) !important; 
+    /* height: 200px; */
   
 }
 
@@ -21,6 +25,7 @@
 
 
 .navbar_logo{
+    cursor: pointer;
     width: 160px;
     height: 50px;
 }
@@ -90,3 +95,107 @@
     }
 
 }
+
+
+.navbar_page{
+    width: 100%;
+    min-height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    
+}
+
+
+.navbar_page h5{
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    color: white;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.30000001192092896px;
+
+}
+
+.navbar_page h5 .arrowRight{
+    margin:-1px 10px 0 10px;
+}
+
+
+.navbar_page h5:last-child .arrowRight{
+    display: none;
+}
+
+
+.Route_SearchWarp{
+    margin: 10px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+
+
+}
+
+.Route_SearchWarp label{
+    width: 30%;
+
+}
+
+.Route_SearchWarp label h5{
+    color: var(--light_blue);
+    margin-bottom: 10px;
+}
+
+.Route_SearchWarp input{
+    width: 95%;
+
+    font-size: 1.4rem;
+
+}
+
+
+@media (max-width: 767px) { 
+
+    .navbar_page{
+      
+        margin-top:10px;
+      
+        
+    }
+
+
+    .Route_SearchWarp{
+        margin: 10px 0px 5px 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+
+    }
+
+    .Route_SearchWarp label{
+        width: 95%;
+
+    
+    }
+
+    .Route_SearchWarp input{
+        width: 100%;
+    
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    
+    }
+    
+
+}
+
