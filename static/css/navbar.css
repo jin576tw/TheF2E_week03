@@ -124,6 +124,7 @@
 
 
 .navbar_page h5{
+    background-color: cyan;
     cursor: pointer;
     display: flex;
     position: relative;
@@ -137,6 +138,8 @@
 }
 
 .navbar_page h5 .arrowRight{
+    width: 6px;
+    height: 6px;
     margin:-1px 10px 0 10px;
 }
 
