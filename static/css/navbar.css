@@ -118,13 +118,13 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 10px;
-    background-color: red;
+   
     
 }
 
 
 .navbar_page h5{
-    background-color: cyan;
+   
     cursor: pointer;
     display: flex;
     position: relative;

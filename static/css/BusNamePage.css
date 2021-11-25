@@ -106,7 +106,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: none;
+    /* display: none; */
 }
 
 
@@ -148,7 +148,7 @@
 }
 
 .BusName_listBox{
-
+    display: none;
     width: 100%;
     height: 100%;
 
@@ -300,11 +300,11 @@
 }
 
 
-.BusName_fav path{
+/* .BusName_fav path{
 
     stroke-width:0;
     fill:#D53D3D
-}
+} */
 
 
 @media (max-width: 767px) { 
