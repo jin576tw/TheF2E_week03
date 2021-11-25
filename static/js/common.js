@@ -214,23 +214,146 @@ function BusName_list(data){
   </div>`
 }
 
+
+
+
 let BusData = []
 
 let SelectedRegion = ``
 
+let SearchKey = ``
 
 
-function BusRoute_city(city){
+// 取得城市公車路線資料
+function getCityRouteData(city){
+  
 
-  return  `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${city}?$top=30&$format=JSON`
+  axios.get(
+
+    `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${city}?$top=30&$format=JSON`,
+
+  {
+      headers: getAuthorizationHeader()
+  }
+  )
+  .then(function (response) {
+
+
+    BusData = response.data;
+
+
+    let busDataListArr = ``
+
+    let BusName_listArr = ``
+
+
+    for(let i = 0 ; i < BusData.length ;i++){ 
+
+        // 搜尋選項   
+        let busDataList = `<option value="${BusData[i].RouteName.Zh_tw}">${BusData[i].RouteName.Zh_tw}</option>`
+
+        busDataListArr += busDataList
+
+        $('#BusDataList').html( busDataListArr)
+
+
+
+        // 搜尋結果
+        BusName_listArr += BusName_list(BusData[i]) 
+
+        $('#BusName_AllList').html(BusName_listArr)
+
+
+    }
+
+    
+    // console.log(BusData);
+    
+
+    
+  })
+  .catch(function (error) {
+
+
+    $('.BusName_listEmpty').show().siblings('.BS_content').hide()
+    console.log(error);
+  }); 
+
+
 
 }
 
 
-function BusRoute_RouteName(city,route){
+// 抓取公車路線資料
+function getRouteNameData(city,route){
+
+  axios.get(
+
+    `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${city}/${route}?$top=30&$format=JSON`,
+
+  {
+      headers: getAuthorizationHeader()
+  }
+  )
+  .then(function (response) {
 
 
-  return `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${city}/${route}?$top=30&$format=JSON`
+    BusData = response.data;
 
-  
+
+    let busDataListArr = ``
+
+    let BusName_listArr = ``
+
+
+    if(BusData.length == 0){
+
+
+        $('.BusName_listEmpty').show().siblings('.BS_content').hide()
+
+
+
+    }else{
+
+        $('.BusName_listBox').show().siblings('.BS_content').hide()
+
+
+        for(let i = 0 ; i < BusData.length ;i++){ 
+
+            // 搜尋選項   
+            let busDataList = `<option value="${BusData[i].RouteName.Zh_tw}">${BusData[i].RouteName.Zh_tw}</option>`
+
+            busDataListArr += busDataList
+
+            $('#BusDataList').html( busDataListArr)
+
+
+
+            // 搜尋結果
+            BusName_listArr += BusName_list(BusData[i]) 
+
+            $('#BusName_AllList').html(BusName_listArr)
+
+
+        }
+
+    }
+
+    
+    // console.log(BusData);
+    
+
+    
+  })
+  .catch(function (error) {
+
+
+    $('.BusName_listEmpty').show().siblings('.BS_content').hide()
+    console.log(error);
+  }); 
+
+
+
+
+
 }
