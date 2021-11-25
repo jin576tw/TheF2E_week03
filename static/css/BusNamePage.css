@@ -1,26 +1,508 @@
 .BusNamePage{
+   
     height: calc(100vh - 50px);
     width: 100%;
-    background-color: #afa;
+    padding-top: 180px;
+    overflow: hidden;
+   
+}
+
+
+.BusNamePage_warp{
+   
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 40px;
+    height:  calc(100vh - 230px);
+    position: relative;
+
+}
+
+
+@media (max-width: 767px) { 
+
+
+    .BusNamePage{
+        height: 100vh;
+        width: 100%;
+      
+        padding-top: 250px;
+       
+    }
+
+    .BusNamePage_warp{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding-top: 0px;
+        height:  calc(100vh - 250px);
+    
+    }
+
 
     
-    padding-top: 180px;
+
+}
+
+.BusName_listWarp{
+    overflow: hidden;
+    width: 40%;
+    height: 90%;
+    margin: 0 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.BusName_listTitle{
+    width: 100%;
+
+    height: 8%;
+    max-height: 45px;
+    background-color: var(--bbGrey);
+    color:white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.BusName_listTitle h4{
 
+
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+
+
+}
+
+
+.BusName_listContent{
+
+    height: 92%;
+    width: 100%;
+    /* overflow-y: auto; */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 40px 0 40px;
+}
+
+
+.BusName_listPic{
+    margin-top: 140px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+.BusName_listPic h5{
+    margin-top: 10px;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: left;
+    color: var(--light_grey)
+
+}
+
+.BusName_listEmpty{
+    margin-top: 140px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+
+}
+
+.BusName_listEmpty h5{
+
+    margin-top: 10px;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: left;
+    color: var(--light_grey)
+
+}
+
+.BusName_listBox{
+
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.friendly_routeWarp{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.friendly_routeWarp h5{
+    margin-right: 5px;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color:#4C546A;
+
+   
+
+}
+
+
+.friendly_routeBtn{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: var(--light_grey);
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+.friendly_routeSwitch{
+    cursor: pointer;
+    position: absolute;
+    left: 3px;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.25);
+}
+
+.BusName_AllList{
+    overflow-y: auto;
+    height: calc(100% - 50px);
+    width: 100%;
+    padding-top: 3px;
+    
+}
 
 .BusName_list{
-    width: 30%;
-    height: 80%;
-    /* max-height: 500px; */
-    background-color:red;
+    cursor: pointer;
+    margin: 0 auto;
+    width: 98%;
+    height: 70px;
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
+
+.BusName_listTop{
+
+  
+}
+
+.BusName_num h3{
+
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: -0.30000001192092896px;
+    color: #F66A4B;
+
+
+}
+
+.BusName_destination{
+    display: flex;
+}
+
+.destination_arrow{
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+}
+
+.BusName_destination h4{
+
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+
+.BusName_listBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.BusName_listBottom h5{
+
+
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: right;
+
+     
+}
+.BusName_fav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height:20px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+
+
+.BusName_fav path{
+
+    stroke-width:0;
+    fill:#D53D3D
+}
+
+
+@media (max-width: 767px) { 
+
+
+    .BusName_listWarp{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0 0px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .BusName_listTitle{
+        display: none;
+    }
+
+
+
+    .BusName_listContent{
+        height: 100%;
+        padding: 0px 5px 0 5px;
+    }
+
+
+
+
+}
+
 .BusName_keyboard{
-    width: 30%;
-    height: 80%;
-    /* max-height: 500px; */
-    background-color:black
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 300px;
+    margin: 0 10px;
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color:white;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+    overflow:hidden
+
+}
+
+.keyboard_Warp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+.keyboard_colorBtn{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 160px;
+
+}
+
+.keyboard_numBtn{
+
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 240px;
+
+
+}
+
+.keyboard_btn{
+    cursor: pointer;
+    width: 70px;
+    margin: 0 10px 10px 0;
+    height: 50px;
+    background: #E5E5E5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: center;
+
+}
+.hidekeyboard{
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+#RedBus{
+    background: #DE6868;
+    color: white;
+
+}
+
+#BlueBus{
+    background: #5274CD;
+    color: white;
+
+}
+
+#BrownBus{
+    background: #B29076;
+    color: white;
+
+}
+
+#GreenBus{
+    background: #83C986;
+    color: white;
+
+}
+
+#OrangeBus{
+    background: #E88C59;
+    color: white;
+
+}
+
+#YellowBus{
+    background: #EDBE62;
+    color: white;
+
+}
+
+
+#FBus{
+    border: 1px solid #8B94B2;
+    background-color: white;
+}
+
+#MoreBus{
+    background: #B1B4BE;
+    color: white;
+
+}
+
+
+@media (max-width: 767px) { 
+
+    .BusName_keyboard{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 0px;
+        position: absolute;
+        bottom: 0px;
+        /* bottom: -270px; */
+        left: 0;
+        width: 100%;
+        height: 300px;
+        margin: 0px;
+        border-radius: 20px 20px 0 0;
+        background-color:white;
+        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+        left: 0;
+       
+    }
+
+    .hidekeyboard{
+       display: flex;
+    }
+
+    .keyboard_Warp{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        
+    }
+
+    .keyboard_colorBtn{
+    
+        max-width: 140px;
+    }
+    
+
+    .keyboard_numBtn{
+
+        max-width: 210px;
+    
+    }
+    .keyboard_btn{
+        cursor: pointer;
+        width: 60px;
+        margin: 0 10px 10px 0;
+        height: 50px;
+        background: #E5E5E5;
+        border-radius: 10px;
+    
+    }
+
 }

@@ -17,7 +17,9 @@ body{
     font-size: 10px;
 
     --bbGrey :#5A637E;
+    --light_grey:#BCC1D1;
     --light_blue: #5CBCDB;
+
 
     
  
@@ -60,6 +62,12 @@ img{
     width: 100%;
 }
 
+
+svg{
+
+    width: 100%;
+
+}
 
 button {
     border: none;

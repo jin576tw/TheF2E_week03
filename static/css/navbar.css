@@ -22,7 +22,7 @@
 
     .Navbar_grey{
         background-color: var(--bbGrey) !important; 
-        max-height: 260px;
+        max-height: 250px;
 
       
     }
@@ -158,6 +158,7 @@
 
 .Route_SearchWarp label{
     width: 40%;
+    margin: 0 10px;
 
 }
 
@@ -167,7 +168,7 @@
 }
 
 .Route_SearchWarp input{
-    width: 95%;
+    width: 100%;
 
     font-size: 1.4rem;
 
