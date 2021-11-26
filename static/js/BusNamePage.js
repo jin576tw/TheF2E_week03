@@ -200,7 +200,7 @@ $('.hideTimeList').click(function(){
 
     if(hideTimeList){
 
-        $('.BusStop_TimeList').css('transform','translateY(562px)')
+        $('.BusStop_TimeList').css('transform','translateY(95%)')
 
         HideIcon.css('transform','rotate(180deg)')
 
