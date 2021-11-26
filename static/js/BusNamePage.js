@@ -160,9 +160,12 @@ $('#backBusList').click(function(){
 
 let showMap = false
 
+let hideTimeList = false
+
 $('#BusRwdMap , #backBusTimeList').click(function(){
 
-
+    hideTimeList = false
+    
     showMap = !showMap
 
    if(showMap){
@@ -189,8 +192,6 @@ $('#BusRwdMap , #backBusTimeList').click(function(){
 
 })
 
-
-let hideTimeList = false
 
 $('.hideTimeList').click(function(){
 
