@@ -135,3 +135,15 @@ $('.hidekeyboard').click(function(){
    
 
 })
+
+
+$('#BusName_AllList').on('click','.BusName_list',function(){
+
+    $('.Navbar').removeClass('Navbar_grey').addClass('Navbar_white')
+
+
+    $('.BusName_MapStops').css('transform', 'translateY(0%)')
+
+    $('.BusStop_content').css('bottom','0px')
+
+})

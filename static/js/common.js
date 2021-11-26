@@ -172,7 +172,7 @@ function CityName(city){
 
 function BusName_list(data){
 
-  return `<div class="BusName_list an">
+  return `<div class="BusName_list ">
 
   <div class="BusName_listTop">
       <div class="BusName_num">

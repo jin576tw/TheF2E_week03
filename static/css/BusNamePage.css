@@ -1,5 +1,5 @@
 .BusNamePage{
-   
+    position: relative;
     height: calc(100vh - 50px);
     width: 100%;
     padding-top: 180px;
@@ -519,6 +519,185 @@
         background: #E5E5E5;
         border-radius: 10px;
     
+    }
+
+}
+
+
+/* ////////////站牌班表/地圖頁////////////////// */
+
+.BusName_MapStops{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 140px);
+    background-color: var(--red);
+    transition: 0.8s;
+    bottom: 0px;
+    overflow: hidden;
+    /* transform: translateY(100%); */
+}
+
+
+@media (max-width: 767px) {
+
+
+    .BusName_MapStops{
+        height: calc(100vh - 50px);
+       
+    }
+    
+}
+
+.BusName_MapStops_warp{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+.BusStop_name{
+    position: absolute;
+    border-radius:  20px 20px 0 0 ;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bbGrey);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start
+    
+}
+
+.BusStop_nameWarp{
+    width: 100%;
+    height: 120px;
+    /* background-color: cyan; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.BusStop_number{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+}
+
+.BusStop_number h1{
+
+    font-size: 5.4rem;
+    font-style: normal;
+    font-weight: 400;
+    
+    letter-spacing: -0.30000001192092896px;
+    text-align: right;
+    color: white;
+
+
+}
+
+.BusStop_Intro{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.BusStop_moreBtnWarp{
+    display: flex;
+}
+.Bus_moreBtn{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.Bus_moreBtn h4{
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: left;
+    color: white;
+
+}
+
+
+.Bus_moreBtn .moreBtnIcon{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    /* background-color: red; */
+}
+
+
+#BusRwdMap{
+    display: none;
+}
+@media (max-width: 767px) {
+
+    .Bus_moreBtn h4{
+        display: none;
+    }
+
+    #BusRwdMap{
+        display: flex;
+    }
+
+}
+.BusStop_destination{
+    display: flex;
+    align-items: center;
+}
+
+.BusStop_arrow{
+    width: 30px;
+    height: 22px;
+
+    margin: 0 10px;
+}
+ 
+.BusStop_destination h4{
+    color: white;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+   
+    letter-spacing: 0px;
+    text-align: right;
+
+}
+
+
+.BusStop_content{
+    
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 260px);
+    bottom: -300px;
+    bottom: 0px;
+    background:white;
+    border-radius:  20px 20px 0 0 ;
+    transition: 1.2s;
+
+
+}
+
+@media (max-width: 767px) {
+
+    .BusStop_content{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 170px);
+        bottom: -300px;
+        bottom: 0px;
+        background:white;
+        border-radius:  20px 20px 0 0 ;
     }
 
 }

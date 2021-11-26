@@ -6,12 +6,10 @@ $('.navbar_logo').click(function(){
 
     $('#LandingPage').fadeIn(800).siblings('.Bus_page').fadeOut(1)
 
-
-
-   
-
-    $('.Navbar').removeClass('Navbar_grey')
+    $('.Navbar').removeClass('Navbar_grey').removeClass('Navbar_white')
     $('.navbar_page,.Route_SearchWarp').hide()
+
+    $('.BusName_MapStops').css('transform', 'translateY(100%)')
 
 })
 
@@ -20,13 +18,12 @@ $('.navbar_logo').click(function(){
 $('.navbarItem_warp li:nth-of-type(1),#BusName_btn').click(function(){
 
     $('#BusStatusPage').fadeIn(800).siblings('.Bus_page').fadeOut(1)
-
-
     
-    $('.Navbar').addClass('Navbar_grey')
+    $('.Navbar').addClass('Navbar_grey').removeClass('Navbar_white')
 
     $('.navbar_page,.Route_SearchWarp').show()
 
+    $('.BusName_MapStops').css('transform', 'translateY(100%)')
 
 
 })
