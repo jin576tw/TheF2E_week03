@@ -141,9 +141,77 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
 
     $('.Navbar').removeClass('Navbar_grey').addClass('Navbar_white')
 
-
     $('.BusName_MapStops').css('transform', 'translateY(0%)')
 
-    $('.BusStop_content').css('bottom','0px')
+    $('.BsContnet').css('bottom','0px')
+
+
+
+})
+
+$('#backBusList').click(function(){
+
+    $('.Navbar').addClass('Navbar_grey').removeClass('Navbar_white')
+    $('.BusName_MapStops').css('transform', 'translateY(100%)')
+
+
+
+})
+
+let showMap = false
+
+$('#BusRwdMap , #backBusTimeList').click(function(){
+
+
+    showMap = !showMap
+
+   if(showMap){
+
+        $('.BusStop_Map').css('transform','translateX(0%)')
+
+        $('.BusStop_TimeList').css('transform','translateY(50%)')
+
+        $('.hideTimeList').show()
+
+
+        $('.Navbar').removeClass('Navbar_white').addClass('Navbar_greyRWD')
+
+   }else{
+
+        $('.BusStop_Map').css('transform','translateX(100%)')
+
+        $('.BusStop_TimeList').css('transform','translateY(0%)')
+        $('.hideTimeList').hide()
+
+        $('.Navbar').removeClass('Navbar_greyRWD').addClass('Navbar_white')
+   }
+
+
+})
+
+
+let hideTimeList = false
+
+$('.hideTimeList').click(function(){
+
+    const HideIcon = $(this).children('svg')
+
+    hideTimeList = !hideTimeList
+
+    if(hideTimeList){
+
+        $('.BusStop_TimeList').css('transform','translateY(562px)')
+
+        HideIcon.css('transform','rotate(180deg)')
+
+    }else{
+
+        $('.BusStop_TimeList').css('transform','translateY(50%)')
+
+        HideIcon.css('transform','rotate(0deg)')
+
+    }
+   
+
 
 })

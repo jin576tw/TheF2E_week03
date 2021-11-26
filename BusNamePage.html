@@ -163,6 +163,7 @@
           </div>
 
 
+          <!-- 顯示單一路線資訊 -->
           <div class="BusName_MapStops">
             <div class="BusName_MapStops_warp">
 
@@ -171,7 +172,16 @@
 
                 <div class="container">
                   <div class="BusStop_nameWarp">
+                    <div class="BusStop_backward" id="backBusList">
+                      <div class="backward_icon">
+                        <svg viewBox="0 0 30 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.44803 -2.10178e-06L-1.9443e-07 4.44797L4.44803 8.896L5.78439 7.55964L3.61773 5.39292L30 5.39292L30 3.50301L3.61773 3.50301L5.78439 1.33635L4.44803 -2.10178e-06Z" fill="white"/>
+                          </svg>
+                          
+                      </div>
 
+                    </div>
+                    
                     <div class="BusStop_number">
                       <h1>5053</h1>
                     </div>
@@ -224,10 +234,34 @@
 
               </div>
 
-              <div class="BusStop_content">
+              <!-- 公車站點動態 -->
+              <div class="BsContnet BusStop_TimeList">
+                <div class="hideTimeList">
+                  <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L11.1962 0H0.803848L6 9Z" fill="#4C546A"/>
+                    </svg>
+                    
+                </div>
 
               </div>
-            
+
+                
+              <!-- 公車動態地圖 -->
+              <div class="BsContnet BusStop_Map">
+
+                <div class="BusStop_backward" id="backBusTimeList">
+                  <div class="backward_icon">
+                    <svg  viewBox="0 0 30 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.44803 -2.10178e-06L-1.9443e-07 4.44797L4.44803 8.896L5.78439 7.55964L3.61773 5.39292L30 5.39292L30 3.50301L3.61773 3.50301L5.78439 1.33635L4.44803 -2.10178e-06Z" fill="#4C546A"/>
+                    </svg>
+                      
+                      
+                  </div>
+                  <h5>5053</h5>
+
+
+              </div>
+              
             </div>
  
           </div>
