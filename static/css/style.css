@@ -144,7 +144,7 @@ select{
     justify-content: flex-end;
     align-items: center;
 
-    display: none;
+    /* display: none; */
 }
 
 
@@ -373,5 +373,5 @@ select{
 
 
 #BusStatusPage{
-    /* display: none; */
+    display: none;
 } 

@@ -26,7 +26,7 @@
 .Navbar_white{
 
 
-    background-color: var(--red);
+    background-color: transparent;
     height: 90px;
 
 
@@ -35,6 +35,10 @@
 
 
 @media (max-width: 767px) { 
+
+    .Navbar{
+        display: none;
+    }
 
 
     .Navbar_grey{
@@ -47,7 +51,7 @@
     .Navbar_white{
 
 
-        background-color: var(--red);
+        background-color: transparent;
         height: 50px;
     }
 
@@ -111,6 +115,10 @@
 
 }
 
+
+/* .navbar_RWD line{
+    stroke:var(--bbGrey) ;
+} */
 
 @media (max-width: 1025px) { }
 @media (max-width: 767px) { 

@@ -172,44 +172,45 @@ function CityName(city){
 
 function BusName_list(data){
 
-  return `<div class="BusName_list ">
+  return `
+  <div class="BusName_list" Route="${data.RouteName.Zh_tw}">
 
-  <div class="BusName_listTop">
-      <div class="BusName_num">
-      <h3>${data.RouteName.Zh_tw}</h3>
-      </div>
+    <div class="BusName_listTop">
+        <div class="BusName_num">
+          <h3>${data.RouteName.Zh_tw}</h3>
+        </div>
 
-      <div class="BusName_fav">
-      
-      <svg viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10.4109 2.25099L10.4105 2.25147L9.71789 2.96512L9.00026 3.70461L8.28263 2.96512L7.59006 2.25147L7.58891 2.25028C6.14757 0.760131 3.87533 0.577931 2.39662 1.83776C0.634384 3.34207 0.537798 6.05599 2.11796 7.69008C2.11801 7.69013 2.11806 7.69018 2.1181 7.69022C2.1182 7.69032 2.11829 7.69042 2.11838 7.69052L8.92038 14.714C8.94722 14.7417 8.97433 14.75 8.9985 14.75C9.02267 14.75 9.04978 14.7417 9.07662 14.714L15.879 7.69008L15.8792 7.68988C17.4625 6.056 17.3662 3.34246 15.6042 1.83804L10.4109 2.25099ZM10.4109 2.25099C11.8563 0.759632 14.1253 0.578285 15.6037 1.83755L10.4109 2.25099Z" stroke="#8B94B3" stroke-width="2"/>
-          </svg>
-      
-          
-      </div>
-      
+        <div class="BusName_fav">
+        
+        <svg viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.4109 2.25099L10.4105 2.25147L9.71789 2.96512L9.00026 3.70461L8.28263 2.96512L7.59006 2.25147L7.58891 2.25028C6.14757 0.760131 3.87533 0.577931 2.39662 1.83776C0.634384 3.34207 0.537798 6.05599 2.11796 7.69008C2.11801 7.69013 2.11806 7.69018 2.1181 7.69022C2.1182 7.69032 2.11829 7.69042 2.11838 7.69052L8.92038 14.714C8.94722 14.7417 8.97433 14.75 8.9985 14.75C9.02267 14.75 9.04978 14.7417 9.07662 14.714L15.879 7.69008L15.8792 7.68988C17.4625 6.056 17.3662 3.34246 15.6042 1.83804L10.4109 2.25099ZM10.4109 2.25099C11.8563 0.759632 14.1253 0.578285 15.6037 1.83755L10.4109 2.25099Z" stroke="#8B94B3" stroke-width="2"/>
+            </svg>
+        
+            
+        </div>
+        
 
-      
-  </div>
-  <div class="BusName_listBottom">
+        
+    </div>
+    <div class="BusName_listBottom">
 
-      <div class="BusName_destination">
+        <div class="BusName_destination">
 
-      <h4>${data.DepartureStopNameZh}</h4>
-      <div class="destination_arrow">
-          <svg viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.85798 0.563633V1.64314H3.14202V0.563633C3.14202 0.0624943 2.53613 -0.188474 2.18176 0.165877L0.164759 2.18288C-0.0549198 2.40256 -0.0549198 2.75869 0.164759 2.97837L2.18176 4.99537C2.53611 5.34972 3.14202 5.09875 3.14202 4.59761V3.51813H8.85798V4.59764C8.85798 5.09878 9.46386 5.34974 9.81824 4.99539L11.8352 2.97839C12.0549 2.75871 12.0549 2.40258 11.8352 2.1829L9.81824 0.1659C9.46389 -0.188474 8.85798 0.0624943 8.85798 0.563633Z" fill="#4C546A"/>
-          </svg>
-          
-      </div>
-      <h4>${data.DestinationStopNameZh}</h4>
-      </div>
+          <h4>${data.DepartureStopNameZh}</h4>
+          <div class="destination_arrow">
+              <svg viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.85798 0.563633V1.64314H3.14202V0.563633C3.14202 0.0624943 2.53613 -0.188474 2.18176 0.165877L0.164759 2.18288C-0.0549198 2.40256 -0.0549198 2.75869 0.164759 2.97837L2.18176 4.99537C2.53611 5.34972 3.14202 5.09875 3.14202 4.59761V3.51813H8.85798V4.59764C8.85798 5.09878 9.46386 5.34974 9.81824 4.99539L11.8352 2.97839C12.0549 2.75871 12.0549 2.40258 11.8352 2.1829L9.81824 0.1659C9.46389 -0.188474 8.85798 0.0624943 8.85798 0.563633Z" fill="#4C546A"/>
+              </svg>
+              
+          </div>
+          <h4>${data.DestinationStopNameZh}</h4>
+        </div>
 
-      <h5>${CityName(data.City)}</h5>
+        <h5>${CityName(data.City)}</h5>
 
 
 
-  </div>
+    </div>
   
   </div>`
 }
@@ -219,9 +220,37 @@ function BusName_list(data){
 
 let BusData = []
 
+let BusStopsMapData = []
+
 let SelectedRegion = ``
 
 let SearchKey = ``
+
+
+
+// 設定地圖中心點
+function setMapView(map,data){
+
+  const BusStops = data[0].Stops
+
+  const BusStopsLength = BusStops.length
+
+        
+  const m =(Math.round(BusStopsLength / 2))
+
+
+  const middleLat =  BusStops[m].StopPosition.PositionLat
+
+  const middleLan =  BusStops[m].StopPosition.PositionLon
+
+  // console.log( middleLat,middleLan);
+
+  map.setView([ middleLat, middleLan], 14);
+
+
+}
+
+
 
 
 // 取得城市公車路線資料
@@ -352,6 +381,90 @@ function getRouteNameData(city,route){
     console.log(error);
   }); 
 
+
+
+
+
+}
+
+
+const BusStopIcon = L.icon({
+  iconUrl: 'BusStopIcon.svg',
+  iconSize: [15, 15],
+});
+
+
+
+// 抓取公車站地圖
+function getBusStopMapData(city,route){
+
+
+   
+    axios.get(
+
+        `https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/${city}/${route}?$top=30&$format=JSON
+        `,
+    
+      {
+          headers: getAuthorizationHeader()
+      }
+      )
+      .then(function (response) {
+    
+    
+        BusStopsMapData = response.data;
+        
+        // 設定地圖中心點
+        setMapView(StopsMap,BusStopsMapData)
+
+        
+
+
+        let BusPositionArr = []
+
+
+        for(let i = 0 ; i < BusStopsMapData[0].Stops.length ;i++){  
+
+
+          let Buslat = BusStopsMapData[0].Stops[i].StopPosition.PositionLat
+
+          let BusLon =BusStopsMapData[0].Stops[i].StopPosition.PositionLon
+
+
+          let BusPosition = [Buslat,BusLon]
+
+          BusPositionArr.push(BusPosition)
+
+          // console.log(BusPosition);
+
+          
+        
+
+
+        L.marker(BusPosition, {
+          icon: BusStopIcon,
+          opacity: 1.0
+        }).addTo(StopsMap);
+                
+              
+          
+
+
+        }
+
+        console.log(BusPositionArr);
+
+        L.polyline(BusPositionArr,{color: 'var(--light_blue)',weight:5}).addTo(StopsMap)
+       
+    
+        
+      })
+      .catch(function (error) {
+    
+    
+      
+        console.log(error);
+      }); 
 
 
 

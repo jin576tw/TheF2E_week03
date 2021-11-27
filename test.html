@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+</head>
+
+<style>
+
+    .map{
+        width: 1200px;
+        height: 800px;
+  
+    }
+
+</style>
+<body>
+
+
+
+
+
+
+    <div class="map" id="Station_Map"></div>
+    
+</body>
+
+ <!-- leaftlet -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+
+
+
+ <script>
+
+
+    const myPostition = [25.0118181, 121.4447909]
+    const StopsMap = L.map('Station_Map').setView(myPostition, 200);
+
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiamluNTc2dHciLCJhIjoiY2t3aGlmNGZpMGpkdjJ0bWRjZGtmaWdxMCJ9.oSDC9BtuuG0J37A58wNovA'
+    }).addTo(StopsMap);
+
+
+
+    L.marker(myPostition).addTo(StopsMap)
+    // L.marker([25.1, 121.7]).addTo(StopsMap)
+
+   const circle = L.circle(myPostition, {
+        color: 'green',
+        fillColor: '#afa',
+        fillOpacity: 0.5,
+        radius: 100
+    }).addTo(StopsMap).bindPopup("I am a circle.");
+
+    // L.polygon([
+    //     [25.0118181, 121.4447909],
+	// 	[25.01159834, 121.4472068],
+    //     [25.00938284, 121.4497662],
+    //     [25.00852, 121.4499]
+		
+	// ]).addTo(StopsMap).bindPopup("I am a polygon.");
+
+    L.polyline([
+        [25.0118181, 121.4447909],
+		[25.01159834, 121.4472068],
+        [25.00938284, 121.4497662],
+        [25.00852, 121.4499]
+		
+	]).addTo(StopsMap).bindPopup("I am a polygon.");
+
+
+
+    console.log(circle);
+    
+ </script>
+
+</html>
+
+
+0: (2) [25.0118181, 121.4447909]
+1: (2) [25.01159834, 121.4472068]
+2: (2) [25.00938284, 121.4497662]
+3: (2) [25.00852, 121.4499]
+4: (2) [25.00721049, 121.4476185]
+5: (2) [25.00205217, 121.4462031]
+6: (2) [25.00136, 121.44576]
+7: (2) [24.99931, 121.44335]
+8: (2) [24.994319, 121.45162]
+9: (2) [24.99516386, 121.4535562]
+10: (2) [24.99739662, 121.4572437]
+11: (2) [24.999752, 121.458394]
+12: (2) [25.002694, 121.459858]
+13: (2) [25.00438447, 121.4598975]
+14: (2) [25.0072766153747, 121.461043262981]
+15: (2) [25.00860074, 121.4634845]
+16: (2) [25.01097152, 121.4636848]
+17: (2) [25.01194682, 121.4645164]
+18: (2) [25.012813, 121.462602]
+19: (2) [25.01262, 121.46724]
+20: (2) [25.014029, 121.470442]
+21: (2) [25.01497569, 121.4724073]
+22: (2) [25.016034, 121.474499]
+23: (2) [25.01672597, 121.4759315]
+24: (2) [25.01803875, 121.4782246]
+25: (2) [25.01945, 121.48066]
+26: (2) [25.02103, 121.483153]
+27: (2) [25.02715329, 121.4941737]
+28: (2) [25.0295844111411, 121.496162828269]
+29: (2) [25.03244, 121.497718]
+30: (2) [25.034147, 121.498768]
+31: (2) [25.035143, 121.500164]
+32: (2) [25.0363140633243, 121.501464019539]
+33: (2) [25.03968147, 121.5019792]
+34: (2) [25.042344, 121.502463]
+35: (2) [25.044994, 121.503074]
+36: (2) [25.045991, 121.505237]
