@@ -251,7 +251,7 @@ L.polygon([
 
 
 
-console.log(circle);
+// console.log(circle);
 
 
 
