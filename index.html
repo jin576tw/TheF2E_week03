@@ -1,196 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello,Bus! 全台公車動態時刻查詢網</title>
 
-   <!-- boostrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous"/>
-     
-	<!--animate -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- leaflet -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+    />
 
-	<!-- fontawesome -->
-     <script src="https://kit.fontawesome.com/78ff172cd0.js" crossorigin="anonymous"></script>
+    <!-- boostrap  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-     
-     <!-- css -->
-     <link rel="stylesheet" href="./static/css/style.css" />
+    <!--animate -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
-     <link rel="stylesheet" href="./static/css/BusNamePage.css" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/78ff172cd0.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./static/css/style.css" />
+
+    <link rel="stylesheet" href="./static/css/BusNamePage.css" />
 
     <link rel="stylesheet" href="./static/css/navbar.css" />
     <link rel="stylesheet" href="./static/css/footer.css" />
 
-
-
-
     <!-- GoogleFont -->
     <!-- 思源宋體 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- 蘋方體 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- 英文字體 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  
-
-  
-
- 
-
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <section id="navbar"></section>
 
-
     <section class="Bus_page LandingPage" id="LandingPage">
-
-
       <div class="LandingPage_bg">
-            <div class="circle_bg"></div>  
-      </div> 
-
-
-      <div class="LandingPage_content">
-
-        <div class="LandingPage_titleWarp animate__animated animate__fadeIn">
-            <div class="LandingPage_titleLogo">
-                <img src="./static/images/HelloBus_light.png" alt="">
-            </div>
-            <h2>全台公車動態時刻查詢網</h2>
-
-
-        </div>  
-
-        <div class="LandingPage_btnWarp">
-            <div class="LandingPage_btn" id="BusName_btn">
-                <div class="LandingPage_btnPic ">
-
-                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.1562 4.5H16.875V2.8125C16.875 1.2375 13.3875 0 9 0C4.6125 0 1.125 1.2375 1.125 2.8125V4.5H0.84375C0.37793 4.5 0 4.87758 0 5.34375V8.15625C0 8.62207 0.37793 9 0.84375 9H1.125V14.625C1.125 15.2462 1.62879 15.75 2.25 15.75V16.875C2.25 17.4962 2.75379 18 3.375 18H4.5C5.12121 18 5.625 17.4962 5.625 16.875V15.75H12.375V16.875C12.375 17.4962 12.8788 18 13.5 18H14.625C15.2462 18 15.75 17.4962 15.75 16.875V15.75H15.975C16.5375 15.75 16.875 15.3 16.875 14.85V9H17.1562C17.6221 9 18 8.62207 18 8.15625V5.34375C18 4.87758 17.6221 4.5 17.1562 4.5ZM3.9375 14.0625C3.31629 14.0625 2.8125 13.5587 2.8125 12.9375C2.8125 12.3163 3.31629 11.8125 3.9375 11.8125C4.55871 11.8125 5.0625 12.3163 5.0625 12.9375C5.0625 13.5587 4.55871 14.0625 3.9375 14.0625ZM4.5 10.125C3.87879 10.125 3.375 9.62121 3.375 9V4.5C3.375 3.87879 3.87879 3.375 4.5 3.375H13.5C14.1212 3.375 14.625 3.87879 14.625 4.5V9C14.625 9.62121 14.1212 10.125 13.5 10.125H4.5ZM14.0625 14.0625C13.4413 14.0625 12.9375 13.5587 12.9375 12.9375C12.9375 12.3163 13.4413 11.8125 14.0625 11.8125C14.6837 11.8125 15.1875 12.3163 15.1875 12.9375C15.1875 13.5587 14.6837 14.0625 14.0625 14.0625Z" fill="white"/>
-                    </svg>
-
-                </div> 
-
-                <h4>公車動態</h4>
-                
-                    
-            </div>
-            <div class="LandingPage_btn" id="NearStation_btn">
-
-                <div class="LandingPage_btnPic">
-                    <svg  viewBox="0 0 46 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.8544 59.4561C3.8273 34.7718 0.666748 32.2385 0.666748 23.1667C0.666748 10.7402 10.7403 0.666656 23.1667 0.666656C35.5932 0.666656 45.6667 10.7402 45.6667 23.1667C45.6667 32.2385 42.5062 34.7718 25.4791 59.4561C24.3617 61.0702 21.9717 61.0701 20.8544 59.4561ZM23.1667 32.5416C28.3444 32.5416 32.5417 28.3443 32.5417 23.1667C32.5417 17.989 28.3444 13.7917 23.1667 13.7917C17.9891 13.7917 13.7917 17.989 13.7917 23.1667C13.7917 28.3443 17.9891 32.5416 23.1667 32.5416Z" fill="white"/>
-                        </svg>
-                </div> 
-                <h4>附近站點</h4>
-                    
-
-            </div>
-            <div class="LandingPage_btn" id="BusSchedule_btn">
-                <div class="LandingPage_btnPic">
-                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M30 0C13.4274 0 0 13.4274 0 30C0 46.5726 13.4274 60 30 60C46.5726 60 60 46.5726 60 30C60 13.4274 46.5726 0 30 0ZM36.9073 42.3508L26.2379 34.5968C25.8629 34.3186 25.6452 33.8831 25.6452 33.4234V13.0645C25.6452 12.2661 26.2984 11.6129 27.0968 11.6129H32.9032C33.7016 11.6129 34.3548 12.2661 34.3548 13.0645V29.7218L42.0363 35.3105C42.6895 35.7823 42.8226 36.6895 42.3508 37.3427L38.9395 42.0363C38.4677 42.6774 37.5605 42.8226 36.9073 42.3508Z" fill="white"/>
-                        </svg>
-                </div>
-                <h4>班表查詢</h4>
-                    
-            </div>
-            
-            <div class="LandingPage_btn" id="FavStation_btn">
-                <div class="LandingPage_btnPic">
-                    <svg viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.3892 2.98091L11.3901 2.97997C12.5614 1.78543 14.3263 1.70641 15.4153 2.62324C16.7835 3.77808 16.8601 5.86433 15.6303 7.11876L15.6299 7.11916L9.24846 13.632L2.8679 7.12003C2.8678 7.11992 2.86769 7.11981 2.86758 7.1197C1.64023 5.86516 1.71694 3.77824 3.0851 2.62332C4.17494 1.70575 5.94255 1.78655 7.10902 2.97855L7.11133 2.98091L7.82314 3.70589L9.25027 5.15946L10.6774 3.70589L11.3892 2.98091Z" fill="white" stroke="white" stroke-width="4"/>
-                    </svg>
-                </div>
-                <h4>我的收藏</h4>
-                    
-                    
-                
-            </div>
-
-        </div>
-
-
-
+        <div class="circle_bg"></div>
       </div>
 
+      <div class="LandingPage_content">
+        <div class="LandingPage_titleWarp animate__animated animate__fadeIn">
+          <div class="LandingPage_titleLogo">
+            <img src="./static/images/HelloBus_light.png" alt="" />
+          </div>
+          <h2>全台公車動態時刻查詢網</h2>
+        </div>
 
-        
+        <div class="LandingPage_btnWarp">
+          <div class="LandingPage_btn" id="BusName_btn">
+            <div class="LandingPage_btnPic">
+              <svg
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.1562 4.5H16.875V2.8125C16.875 1.2375 13.3875 0 9 0C4.6125 0 1.125 1.2375 1.125 2.8125V4.5H0.84375C0.37793 4.5 0 4.87758 0 5.34375V8.15625C0 8.62207 0.37793 9 0.84375 9H1.125V14.625C1.125 15.2462 1.62879 15.75 2.25 15.75V16.875C2.25 17.4962 2.75379 18 3.375 18H4.5C5.12121 18 5.625 17.4962 5.625 16.875V15.75H12.375V16.875C12.375 17.4962 12.8788 18 13.5 18H14.625C15.2462 18 15.75 17.4962 15.75 16.875V15.75H15.975C16.5375 15.75 16.875 15.3 16.875 14.85V9H17.1562C17.6221 9 18 8.62207 18 8.15625V5.34375C18 4.87758 17.6221 4.5 17.1562 4.5ZM3.9375 14.0625C3.31629 14.0625 2.8125 13.5587 2.8125 12.9375C2.8125 12.3163 3.31629 11.8125 3.9375 11.8125C4.55871 11.8125 5.0625 12.3163 5.0625 12.9375C5.0625 13.5587 4.55871 14.0625 3.9375 14.0625ZM4.5 10.125C3.87879 10.125 3.375 9.62121 3.375 9V4.5C3.375 3.87879 3.87879 3.375 4.5 3.375H13.5C14.1212 3.375 14.625 3.87879 14.625 4.5V9C14.625 9.62121 14.1212 10.125 13.5 10.125H4.5ZM14.0625 14.0625C13.4413 14.0625 12.9375 13.5587 12.9375 12.9375C12.9375 12.3163 13.4413 11.8125 14.0625 11.8125C14.6837 11.8125 15.1875 12.3163 15.1875 12.9375C15.1875 13.5587 14.6837 14.0625 14.0625 14.0625Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
 
+            <h4>公車動態</h4>
+          </div>
+          <div class="LandingPage_btn" id="NearStation_btn">
+            <div class="LandingPage_btnPic">
+              <svg
+                viewBox="0 0 46 61"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.8544 59.4561C3.8273 34.7718 0.666748 32.2385 0.666748 23.1667C0.666748 10.7402 10.7403 0.666656 23.1667 0.666656C35.5932 0.666656 45.6667 10.7402 45.6667 23.1667C45.6667 32.2385 42.5062 34.7718 25.4791 59.4561C24.3617 61.0702 21.9717 61.0701 20.8544 59.4561ZM23.1667 32.5416C28.3444 32.5416 32.5417 28.3443 32.5417 23.1667C32.5417 17.989 28.3444 13.7917 23.1667 13.7917C17.9891 13.7917 13.7917 17.989 13.7917 23.1667C13.7917 28.3443 17.9891 32.5416 23.1667 32.5416Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+            <h4>附近站點</h4>
+          </div>
+          <div class="LandingPage_btn" id="BusSchedule_btn">
+            <div class="LandingPage_btnPic">
+              <svg
+                viewBox="0 0 60 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M30 0C13.4274 0 0 13.4274 0 30C0 46.5726 13.4274 60 30 60C46.5726 60 60 46.5726 60 30C60 13.4274 46.5726 0 30 0ZM36.9073 42.3508L26.2379 34.5968C25.8629 34.3186 25.6452 33.8831 25.6452 33.4234V13.0645C25.6452 12.2661 26.2984 11.6129 27.0968 11.6129H32.9032C33.7016 11.6129 34.3548 12.2661 34.3548 13.0645V29.7218L42.0363 35.3105C42.6895 35.7823 42.8226 36.6895 42.3508 37.3427L38.9395 42.0363C38.4677 42.6774 37.5605 42.8226 36.9073 42.3508Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+            <h4>班表查詢</h4>
+          </div>
 
-    </section> 
-
+          <div class="LandingPage_btn" id="FavStation_btn">
+            <div class="LandingPage_btnPic">
+              <svg
+                viewBox="0 0 19 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.3892 2.98091L11.3901 2.97997C12.5614 1.78543 14.3263 1.70641 15.4153 2.62324C16.7835 3.77808 16.8601 5.86433 15.6303 7.11876L15.6299 7.11916L9.24846 13.632L2.8679 7.12003C2.8678 7.11992 2.86769 7.11981 2.86758 7.1197C1.64023 5.86516 1.71694 3.77824 3.0851 2.62332C4.17494 1.70575 5.94255 1.78655 7.10902 2.97855L7.11133 2.98091L7.82314 3.70589L9.25027 5.15946L10.6774 3.70589L11.3892 2.98091Z"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="4"
+                />
+              </svg>
+            </div>
+            <h4>我的收藏</h4>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="Bus_page" id="BusStatusPage"></section>
 
-
     <section id="footer"></section>
 
-    
+  </body>
 
+  <!-- cdn -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+  />
 
-    
+  <!-- Jq -->
+  <script src="./static/jq/jquery-3.6.0.js"></script>
 
-
-   
-    
-
-
-
-</body>
-
-<!-- cdn -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
-
-<!-- Jq -->
-<script src="./static/jq/jquery-3.6.0.js"></script>
-
-<!-- cookie -->
-<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
-
-
-<!-- axios -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<!-- jsSHA -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
-
-
-<!-- js -->
-<script src="./static/js/common.js"></script>
-<script src="./static/js/LandingPage.js"></script>
-
-
-<script>
-
+  <!-- cookie -->
+  <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   
-    $('#BusStatusPage').load('BusNamePage.html')
-    $('#navbar').load('navbar.html')
-    $('#footer').load('footer.html')    
+
+  <!-- leaftlet -->
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""
+  ></script>
+
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- jsSHA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+
+  <!-- js -->
+  <script src="./static/js/common.js"></script>
+  <script src="./static/js/LandingPage.js"></script>
+
+  <script>
+    $("#BusStatusPage").load("BusNamePage.html");
+    $("#navbar").load("navbar.html");
+    $("#footer").load("footer.html");
     
 
 
+
     
-   
-
-
-</script>
+  </script>
 </html>

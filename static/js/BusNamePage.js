@@ -129,10 +129,6 @@ $('.hidekeyboard').click(function(){
     
 
 
-    
-
-
-   
 
 })
 
@@ -165,7 +161,7 @@ let hideTimeList = false
 $('#BusRwdMap , #backBusTimeList').click(function(){
 
     hideTimeList = false
-    
+
     showMap = !showMap
 
    if(showMap){
@@ -216,3 +212,55 @@ $('.hideTimeList').click(function(){
 
 
 })
+
+
+//////////////////////載入地圖//////////////////////// 
+
+
+const myPostition = [25.0771246, 121.6205599]
+
+
+
+const StopsMap = L.map('Map').setView(myPostition, 200);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+maxZoom: 18,
+id: 'mapbox/streets-v11',
+tileSize: 512,
+zoomOffset: -1,
+accessToken: 'pk.eyJ1IjoiamluNTc2dHciLCJhIjoiY2t3aGlmNGZpMGpkdjJ0bWRjZGtmaWdxMCJ9.oSDC9BtuuG0J37A58wNovA'
+}).addTo(StopsMap);
+
+
+L.marker(myPostition).addTo(StopsMap)
+L.marker([25.1, 121.7]).addTo(StopsMap)
+
+const circle = L.circle(myPostition, {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+}).addTo(StopsMap).bindPopup("I am a circle.");
+
+L.polygon([
+    myPostition,
+    [25.1, 121.7],
+    
+]).addTo(StopsMap).bindPopup("I am a polygon.");
+
+
+
+console.log(circle);
+
+
+
+
+
+
+
+
+
+
+
+
