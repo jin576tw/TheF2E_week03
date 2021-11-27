@@ -534,7 +534,7 @@
     transition: 0.8s;
     bottom: 0px;
     overflow: hidden;
-    transform: translateY(100%);
+    /* transform: translateY(100%); */
 }
 
 
@@ -752,7 +752,7 @@
     height: calc(100vh - 290px);
     transition: 1.2s;
     bottom: -300px;
-    /* bottom: 0; */
+    bottom: 0;
 
 }
 
@@ -785,6 +785,8 @@
 #BusStopMap{
     width: 100%;
     height: 100%;
+    min-width: 100%;
+    min-height: 100%;
  
 
 

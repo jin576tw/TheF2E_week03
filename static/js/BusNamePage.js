@@ -277,13 +277,13 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
 
 const StopsMap = L.map('BusStopMap').setView([0,0], 200);
 
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-maxZoom: 20,
-attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+maxZoom: 18,
+id: 'mapbox/streets-v11',
 tileSize: 512,
 zoomOffset: -1,
-
+accessToken: 'pk.eyJ1IjoiamluNTc2dHciLCJhIjoiY2t3aGlmNGZpMGpkdjJ0bWRjZGtmaWdxMCJ9.oSDC9BtuuG0J37A58wNovA'
 }).addTo(StopsMap);
 
 
