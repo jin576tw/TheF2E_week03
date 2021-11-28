@@ -146,6 +146,8 @@ $('#backBusList').click(function(){
 
     $('.navbar_page h5').css('color','white')
 
+    $('.arrowRight path').css('fill','white')
+
 
 })
 

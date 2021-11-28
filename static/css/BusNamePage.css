@@ -647,6 +647,7 @@
     justify-content: flex-start;
     align-items: center;
     display: none;
+    background-color: red;
 
 }
 
@@ -669,7 +670,7 @@
     content: ' 路線圖';
 }
 .backward_icon{
-    background-color: cyanv;
+    background-color: cyan;
     width: 30px;
     height: 50px;
     display: flex;
