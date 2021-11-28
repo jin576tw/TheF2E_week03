@@ -678,6 +678,10 @@
     align-items: center;
 }
 
+.backward_icon svg{
+    width: 100%;
+}
+
 #backBusTimeList{
     background-color: white;
 }
