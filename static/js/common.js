@@ -687,7 +687,7 @@ function getBusStopTimeData(city,route){
 
     BusStopsTimeData = response.data;
 
-    console.log(BusStopsTimeData);
+    // console.log(BusStopsTimeData);
 
 
     let BusTime_ListArr =``
@@ -699,7 +699,7 @@ function getBusStopTimeData(city,route){
 
 
 
-            console.log(BusStopsTimeData[i]);
+            // console.log(BusStopsTimeData[i]);
             
 
             BusTime_ListArr += BusTime_List(BusStopsTimeData[i])
