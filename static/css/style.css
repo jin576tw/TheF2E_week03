@@ -756,7 +756,7 @@ select{
     
     height: 100%;
     width: 60%;
-    background-color: red;
+
     
 }
 
@@ -822,7 +822,7 @@ select{
     background-color: white;
     overflow-y: auto;
     padding-top: 10px;
-    background-color: red;
+
 }
 
 .TimeList{
