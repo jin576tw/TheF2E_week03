@@ -135,6 +135,8 @@ $('.hidekeyboard').click(function(){
 
 
 
+//////////////////////// 單一公車地圖與時刻表 ///////////////////   
+
 $('#backBusList').click(function(){
 
     $('.Navbar').addClass('Navbar_grey').removeClass('Navbar_white')
