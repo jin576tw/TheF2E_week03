@@ -254,7 +254,7 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
     }
 
     // 公車名稱
-    const RouteName = $(this).attr('Route')
+    RouteName = $(this).attr('Route')
 
     $('#BusStop_number h1').text(RouteName)
 
@@ -271,10 +271,15 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
 
     $('#BusStop_destination').children('h4:nth-of-type(2)').text(Destination)
 
-
-
+    $('#TimeList_destination h3').text(Destination)
+    
+    
+    // 串接地圖
     getBusStopMapData(SelectedRegion,RouteName);
 
+    // 串接站點時間
+    getBusStopTimeData(SelectedRegion,RouteName)
+    
 
    
 

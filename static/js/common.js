@@ -216,14 +216,178 @@ function BusName_list(data){
 }
 
 
+function BusTime_List(data){
+
+  // 秒轉成分鐘
+  function SecToMin (sec){
+      return Math.floor(sec / 60)
+  }
+
+
+  // 當車正常發車時
+  if(data.StopStatus == 0){
+
+
+      if(data.EstimateTime <= 180){
+
+      
+          return `<div class="TimeList">
+
+                      <div class="TimeList_Top">
+                          <div class="TimeList_icon">
+                          <div class="TimeList_icon_outside near_icon">
+                              <div class="TimeList_icon_inside"></div>
+                          </div>
+                          <div class="TimeList_icon_line"></div>
+                          </div>
+                          <div class="TimeList_time near_time">
+                          <h3>即將到站</h3>
+                          </div>
+                          <div class="TimeList_name near_time">
+                          <h3>${data.StopName.Zh_tw}</h3>
+                          </div>
+                      </div>
+                      
+                  </div>`
+
+      }else{
+
+
+          return `<div class="TimeList">
+
+                      <div class="TimeList_Top">
+                          <div class="TimeList_icon">
+                          <div class="TimeList_icon_outside">
+                              <div class="TimeList_icon_inside"></div>
+                          </div>
+                          <div class="TimeList_icon_line"></div>
+                          </div>
+                          <div class="TimeList_time">
+                          <h3>${SecToMin(data.EstimateTime)}分鐘</h3>
+                          </div>
+                          <div class="TimeList_name">
+                          <h3>${data.StopName.Zh_tw}</h3>
+                          </div>
+                      </div>
+                      
+                  </div>`
+
+
+
+      }
+      
+     
+
+
+  }else if(data.StopStatus == 1){
+
+      return `<div class="TimeList">
+
+                  <div class="TimeList_Top">
+                      <div class="TimeList_icon">
+                      <div class="TimeList_icon_outside">
+                          <div class="TimeList_icon_inside"></div>
+                      </div>
+                      <div class="TimeList_icon_line"></div>
+                      </div>
+                      <div class="TimeList_time default_time">
+                      <h3>尚未發車</h3>
+                      </div>
+                      <div class="TimeList_name default_time">
+                      <h3>${data.StopName.Zh_tw}</h3>
+                      </div>
+                  </div>
+                  
+              </div>`
+
+
+  }else if(data.StopStatus == 2){
+
+      
+
+      return `<div class="TimeList">
+
+      <div class="TimeList_Top">
+          <div class="TimeList_icon">
+          <div class="TimeList_icon_outside">
+              <div class="TimeList_icon_inside"></div>
+          </div>
+          <div class="TimeList_icon_line"></div>
+          </div>
+          <div class="TimeList_time default_time">
+          <h3>交管不停靠</h3>
+          </div>
+          <div class="TimeList_name default_time">
+          <h3>${data.StopName.Zh_tw}</h3>
+          </div>
+      </div>
+      
+  </div>`
+
+  
+
+  }else if(data.StopStatus == 3){
+
+
+
+      return `<div class="TimeList">
+
+                  <div class="TimeList_Top">
+                      <div class="TimeList_icon">
+                      <div class="TimeList_icon_outside">
+                          <div class="TimeList_icon_inside"></div>
+                      </div>
+                      <div class="TimeList_icon_line"></div>
+                      </div>
+                      <div class="TimeList_time default_time">
+                      <h3>末班車已過</h3>
+                      </div>
+                      <div class="TimeList_name default_time">
+                      <h3>${data.StopName.Zh_tw}</h3>
+                      </div>
+                  </div>
+                  
+              </div>`
+
+
+  }else if(data.StopStatus == 4){
+
+
+      return `<div class="TimeList">
+
+                  <div class="TimeList_Top">
+                      <div class="TimeList_icon">
+                      <div class="TimeList_icon_outside">
+                          <div class="TimeList_icon_inside"></div>
+                      </div>
+                      <div class="TimeList_icon_line"></div>
+                      </div>
+                      <div class="TimeList_time default_time">
+                      <h3>今日未營運</h3>
+                      </div>
+                      <div class="TimeList_name default_time">
+                      <h3>${data.StopName.Zh_tw}</h3>
+                      </div>
+                  </div>
+                  
+              </div>`
+
+  }
+
+
+}
 
 let BusData = []
 
 let BusStopsMapData = []
 
+let BusStopsTimeData = []
+
 let BusPositionArr = []
 
 let SelectedRegion = ``
+
+let RouteName =``
 
 let SearchKey = ``
 
@@ -456,7 +620,6 @@ function getRouteNameData(city,route){
 
 
 
-
 // 抓取公車站地圖
 function getBusStopMapData(city,route){
 
@@ -475,6 +638,8 @@ function getBusStopMapData(city,route){
     
     
         BusStopsMapData = response.data;
+
+      
         
         // 設定地圖中心點
         setMapView(StopsMap,BusStopsMapData)
@@ -483,6 +648,8 @@ function getBusStopMapData(city,route){
         // 設定地圖站點與路線
         setBusStopsMarker(StopsMap,BusStopsMapData)
 
+
+        console.log(BusStopsMapData);
 
       
     
@@ -501,6 +668,65 @@ function getBusStopMapData(city,route){
 }
 
 
+function getBusStopTimeData(city,route){
 
+
+  axios.get(
+
+    `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/${city}/${route}?$top=30&$format=JSON
+
+    `,
+
+  {
+      headers: getAuthorizationHeader()
+  }
+  )
+  .then(function (response) {
+
+
+
+    BusStopsTimeData = response.data;
+
+    console.log(BusStopsTimeData);
+
+
+    let BusTime_ListArr =``
+
+    for(let i = 0 ; i < BusStopsTimeData.length ;i++){ 
+
+         // 挑選去程
+        if(BusStopsTimeData[i].Direction == 0){
+
+
+
+            console.log(BusStopsTimeData[i]);
+            
+
+            BusTime_ListArr += BusTime_List(BusStopsTimeData[i])
+
+
+        }
+
+    
+
+    }
+    
+    
+    $('#TimeList_Content').html(BusTime_ListArr)
+  
+
+    
+  })
+  .catch(function (error) {
+
+
+
+    console.log(error);
+  }); 
+
+
+
+
+}
 
 
