@@ -290,9 +290,20 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
     getBusStopTimeData(SelectedRegion,RouteName,Direction)
     
 
+    // console.log(SelectedRegion,RouteName,Direction)
+
+
+
+    // 每15秒更新資料
+    Updated = setInterval(UpdateBusData, 15000);
+
+
+
    
 
+    
 
+   
 })
 
 
@@ -303,27 +314,49 @@ $('.TimeList_Switch').click(function(){
 
     DirectionSwitch = !DirectionSwitch
 
-
     $(this).css('transform','rotate(180deg)')
+
    
-    
+   
 
     if( DirectionSwitch){
 
         $(this).css('transform','rotate(180deg)')
 
         Direction = 1
+
         $('#TimeList_destination h3').text(Departure)
+
         getBusStopTimeData(SelectedRegion,RouteName,Direction)
+
+        // console.log(SelectedRegion,RouteName,Direction)
+
+        // 每15秒更新資料
+        StopUpdated()
+
+        Updated = setInterval(UpdateBusData, 15000);
+
+    
+       
 
     }else{
 
         $(this).css('transform','rotate(0deg)')
-        
+
         Direction = 0 
+
         $('#TimeList_destination h3').text(Destination)
 
         getBusStopTimeData(SelectedRegion,RouteName,Direction)
+
+        // console.log(SelectedRegion,RouteName,Direction)
+
+        // 每15秒更新資料
+        StopUpdated()
+
+        Updated = setInterval(UpdateBusData, 15000);
+
+      
 
 
     }

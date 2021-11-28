@@ -385,7 +385,7 @@ let BusStopsTimeData = []
 
 let BusPositionArr = []
 
-let Direction = 0
+let Direction = null
 
 let SelectedRegion = ``
 
@@ -400,6 +400,14 @@ const BusStopIcon = L.icon({
   iconSize: [18, 18],
   popupAnchor: [0, -20]
 });
+
+// 公車圖示
+const BusNowIcon = L.icon({
+  iconUrl: 'BusNowIcon.svg',
+  iconSize: [30, 30],
+  popupAnchor: [0, -20]
+});
+
 
 
 
@@ -484,6 +492,50 @@ function setBusStopsMarker(map,data){
 
 }
 
+
+// 設定當前公車圖標
+function setNowBusPositionMarker(TimeData,MapData,map){
+
+
+  // 當車正常發車時
+  if(TimeData.StopStatus == 0){
+     
+    //距離站點五分鐘
+    if(TimeData.EstimateTime <= 300){
+   
+       // 從地圖資料比對
+       for(let j = 0 ; j < MapData.Stops.length ;j++){ 
+
+          // 取得ID相同位置
+         if(MapData.Stops[j].StopUID == TimeData.StopUID){
+
+
+           let BusLat = MapData.Stops[j].StopPosition.PositionLat 
+           let BusLon = MapData.Stops[j].StopPosition.PositionLon
+
+           let BusPosition = [BusLat,BusLon]
+
+           console.log(BusPosition);
+
+            L.marker(BusPosition, {
+              icon: BusNowIcon,
+              opacity: 1.0
+            }).addTo(map)
+           
+          
+         }
+
+      }
+
+
+    }
+
+}
+
+
+
+
+}
 
 // 取得城市公車路線資料
 function getCityRouteData(city){
@@ -621,7 +673,6 @@ function getRouteNameData(city,route){
 
 
 
-
 // 抓取公車站地圖
 function getBusStopMapData(city,route){
 
@@ -651,7 +702,7 @@ function getBusStopMapData(city,route){
         setBusStopsMarker(StopsMap,BusStopsMapData)
 
 
-        console.log(BusStopsMapData);
+        // console.log(BusStopsMapData);
 
       
     
@@ -689,32 +740,39 @@ function getBusStopTimeData(city,route,dir){
 
     BusStopsTimeData = response.data;
 
-    // console.log(BusStopsTimeData);
-
-
     let BusTime_ListArr =``
 
     for(let i = 0 ; i < BusStopsTimeData.length ;i++){ 
 
-         // 挑選去程
+         // 挑選方向
         if(BusStopsTimeData[i].Direction == dir){
 
 
-
-            // console.log(BusStopsTimeData[i]);
-            
-
             BusTime_ListArr += BusTime_List(BusStopsTimeData[i])
+
+
+
+            // 設定公車當前位置圖示
+            setNowBusPositionMarker(BusStopsTimeData[i],BusStopsMapData[0],StopsMap)
+           
+     
+            
+     
 
 
         }
 
     
-
     }
     
     
     $('#TimeList_Content').html(BusTime_ListArr)
+
+    
+
+
+
+
   
 
     
@@ -731,4 +789,51 @@ function getBusStopTimeData(city,route,dir){
 
 }
 
+ 
+// 更新站點資料
+let Updated = null
 
+function UpdateBusData(){
+
+  console.log('Bus Updated')
+
+  getBusStopTimeData(SelectedRegion,RouteName,Direction)
+
+}
+
+function StopUpdated() {
+  clearInterval(Updated);
+}
+
+// function updateBusData(){
+
+//   console.log(SelectedRegion,RouteName,Direction)
+
+// }
+
+
+//   Interval((city,route,dir)=>{
+
+//     console.log(city,route,dir);
+   
+
+
+//     // getBusStopMapData(city,route)
+
+//     // getBusStopTimeData(city,route,dir)
+     
+  
+//   },3000)
+
+//    set
+// }
+
+// function myStopFunction() {
+//   console.log('hi');
+//   clearInterval(UpdateBusData);
+// }
+
+
+
+
+// updateBusData(SelectedRegion,RouteName,Direction)
