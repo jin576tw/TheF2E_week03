@@ -273,9 +273,9 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
 
     $('#TimeList_destination h3').text(Destination)
     
-    
+
     // 串接地圖
-    getBusStopMapData(SelectedRegion,RouteName);
+    getBusStopMapData(SelectedRegion,RouteName)
 
     // 串接站點時間
     getBusStopTimeData(SelectedRegion,RouteName)
