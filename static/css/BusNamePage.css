@@ -656,6 +656,7 @@
 .BusStop_backward h5{
     margin-top: 3px;
     margin: 0 auto;
+
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 500;
@@ -670,7 +671,6 @@
     content: ' 路線圖';
 }
 .backward_icon{
-    background-color: cyan;
     width: 30px;
     height: 50px;
     display: flex;
