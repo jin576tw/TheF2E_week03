@@ -231,8 +231,8 @@ let SearchKey = ``
 // 自訂公車站點圖示
 const BusStopIcon = L.icon({
   iconUrl: 'BusStopIcon.svg',
-  iconSize: [15, 15],
-  // popupAnchor: [15, 8]
+  iconSize: [18, 18],
+  popupAnchor: [0, -10]
 });
 
 
