@@ -37,6 +37,8 @@ $('.navbar_logo').click(function(){
         $('.Navbar').hide()
 
     }
+    // 每15秒更新資料
+    StopUpdated()
     
 
 })
@@ -69,6 +71,9 @@ $('.navbarItem_warp li:nth-of-type(1),#BusName_btn').click(function(){
     $('.BsContnet').css('bottom','-300px')
 
     $('.circle_bg').css('transform','scale(0.4)').css('box-shadow',' 0 0 0 3000px rgba(255, 255, 255, 0.829)')
+
+    // 每15秒更新資料
+    StopUpdated()
 
 })
 
