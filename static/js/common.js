@@ -217,15 +217,22 @@ function BusName_list(data){
 
 
 
-
 let BusData = []
 
 let BusStopsMapData = []
+
+let BusPositionArr = []
 
 let SelectedRegion = ``
 
 let SearchKey = ``
 
+
+// 自訂公車站點圖示
+const BusStopIcon = L.icon({
+  iconUrl: 'BusStopIcon.svg',
+  iconSize: [15, 15],
+});
 
 
 // 設定地圖中心點
@@ -251,6 +258,42 @@ function setMapView(map,data){
 }
 
 
+// 設定地圖站點與路線
+function setBusStopsMarker(map,data){
+
+
+  for(let i = 0 ; i < data[0].Stops.length ;i++){  
+
+
+    let Buslat = data[0].Stops[i].StopPosition.PositionLat
+
+    let BusLon =data[0].Stops[i].StopPosition.PositionLon
+
+
+    let BusPosition = [Buslat,BusLon]
+
+    BusPositionArr.push(BusPosition)
+
+    // console.log(BusPosition);
+
+    
+
+    L.marker(BusPosition, {
+      icon: BusStopIcon,
+      opacity: 1.0
+    }).addTo(map).bindPopup("I am a circle.");;
+          
+        
+    
+
+
+  }
+
+  console.log(BusPositionArr);
+
+  L.polyline(BusPositionArr,{color: 'var(--light_blue)',weight:5}).addTo(map)
+
+}
 
 
 // 取得城市公車路線資料
@@ -388,10 +431,6 @@ function getRouteNameData(city,route){
 }
 
 
-const BusStopIcon = L.icon({
-  iconUrl: 'BusStopIcon.svg',
-  iconSize: [15, 15],
-});
 
 
 
@@ -418,44 +457,11 @@ function getBusStopMapData(city,route){
         setMapView(StopsMap,BusStopsMapData)
 
         
+        // 設定地圖站點與路線
+        setBusStopsMarker(StopsMap,BusStopsMapData)
 
 
-        let BusPositionArr = []
-
-
-        for(let i = 0 ; i < BusStopsMapData[0].Stops.length ;i++){  
-
-
-          let Buslat = BusStopsMapData[0].Stops[i].StopPosition.PositionLat
-
-          let BusLon =BusStopsMapData[0].Stops[i].StopPosition.PositionLon
-
-
-          let BusPosition = [Buslat,BusLon]
-
-          BusPositionArr.push(BusPosition)
-
-          // console.log(BusPosition);
-
-          
-        
-
-
-        L.marker(BusPosition, {
-          icon: BusStopIcon,
-          opacity: 1.0
-        }).addTo(StopsMap);
-                
-              
-          
-
-
-        }
-
-        console.log(BusPositionArr);
-
-        L.polyline(BusPositionArr,{color: 'var(--light_blue)',weight:5}).addTo(StopsMap)
-       
+      
     
         
       })

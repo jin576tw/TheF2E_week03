@@ -291,7 +291,7 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
 
 const StopsMap = L.map('BusStopMap').setView([0,0], 200);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+L.tileLayer('https://api.mapbox.com/styles/v1/jin576tw/ckwiz4bqa3zz517qvd7ldx181/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiamluNTc2dHciLCJhIjoiY2t3NHRhNG1hMGlvbjJ5bGpkenFxeDQxNyJ9.10nDPZgfQWX5zeYcLuv_rQ', {
 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 maxZoom: 18,
 id: 'mapbox/streets-v11',
@@ -299,8 +299,6 @@ tileSize: 512,
 zoomOffset: -1,
 accessToken: 'pk.eyJ1IjoiamluNTc2dHciLCJhIjoiY2t3aGlmNGZpMGpkdjJ0bWRjZGtmaWdxMCJ9.oSDC9BtuuG0J37A58wNovA'
 }).addTo(StopsMap);
-
-
 
 
 
