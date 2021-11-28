@@ -232,7 +232,7 @@ let SearchKey = ``
 const BusStopIcon = L.icon({
   iconUrl: 'BusStopIcon.svg',
   iconSize: [18, 18],
-  popupAnchor: [0, -10]
+  popupAnchor: [0, -20]
 });
 
 
