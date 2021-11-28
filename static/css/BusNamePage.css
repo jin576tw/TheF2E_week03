@@ -641,17 +641,20 @@
 .BusStop_backward{
     position: relative;
     height: 50px;
+    min-height: 50px;
     width: 100%;
-    justify-content: center;
+    padding: 0 8px;
+    justify-content: flex-start;
     align-items: center;
     display: none;
+
 }
 
 
 
 .BusStop_backward h5{
     margin-top: 3px;
-    margin-left: 15px;
+    margin: 0 auto;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 500;
@@ -663,12 +666,10 @@
 }
 
 .BusStop_backward h5::after{
-
     content: ' 路線圖';
 }
 .backward_icon{
-    position: absolute;
-    left: 8px;
+    background-color: cyanv;
     width: 30px;
     height: 50px;
     display: flex;
@@ -678,17 +679,13 @@
 
 #backBusTimeList{
     background-color: white;
-    padding: 0 10px;
 }
 
-#backBusTimeList .backward_icon{
-
-    left: 15px;
-
-}
 #BusRwdMap{
     display: none;
 }
+
+
 @media (max-width: 767px) {
 
     .Bus_moreBtn h4{
