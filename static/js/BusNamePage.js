@@ -226,6 +226,13 @@ $('.hideTimeList').click(function(){
 
 })
 
+
+// 路線起點
+let Departure =``
+
+// 路線終點
+let Destination =``
+
 $('#BusName_AllList').on('click','.BusName_list',function(){
 
     
@@ -261,13 +268,13 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
     $('#backBusTimeList h5').text(RouteName)
 
     // 路線起點
-    const Departure = $(this).children('.BusName_listBottom').children('.BusName_destination').children('h4:nth-of-type(1)').text()
+    Departure = $(this).children('.BusName_listBottom').children('.BusName_destination').children('h4:nth-of-type(1)').text()
 
     $('#BusStop_destination').children('h4:nth-of-type(1)').text(Departure)
 
 
     // 路線終點
-    const Destination = $(this).children('.BusName_listBottom').children('.BusName_destination').children('h4:nth-of-type(2)').text()
+    Destination = $(this).children('.BusName_listBottom').children('.BusName_destination').children('h4:nth-of-type(2)').text()
 
     $('#BusStop_destination').children('h4:nth-of-type(2)').text(Destination)
 
@@ -277,13 +284,52 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
     // 串接地圖
     getBusStopMapData(SelectedRegion,RouteName)
 
+    Direction = 0
+
     // 串接站點時間
-    getBusStopTimeData(SelectedRegion,RouteName)
+    getBusStopTimeData(SelectedRegion,RouteName,Direction)
     
 
    
 
 
+})
+
+
+
+let DirectionSwitch = false
+
+$('.TimeList_Switch').click(function(){
+
+    DirectionSwitch = !DirectionSwitch
+
+
+    $(this).css('transform','rotate(180deg)')
+   
+    
+
+    if( DirectionSwitch){
+
+        $(this).css('transform','rotate(180deg)')
+
+        Direction = 1
+        $('#TimeList_destination h3').text(Departure)
+        getBusStopTimeData(SelectedRegion,RouteName,Direction)
+
+    }else{
+
+        $(this).css('transform','rotate(0deg)')
+        
+        Direction = 0 
+        $('#TimeList_destination h3').text(Destination)
+
+        getBusStopTimeData(SelectedRegion,RouteName,Direction)
+
+
+    }
+   
+
+   
 })
 
 

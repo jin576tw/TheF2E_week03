@@ -385,6 +385,8 @@ let BusStopsTimeData = []
 
 let BusPositionArr = []
 
+let Direction = 0
+
 let SelectedRegion = ``
 
 let RouteName =``
@@ -667,8 +669,8 @@ function getBusStopMapData(city,route){
 
 }
 
-
-function getBusStopTimeData(city,route){
+// 抓取公車站點時間(城市/地點/方向)
+function getBusStopTimeData(city,route,dir){
 
 
   axios.get(
@@ -695,7 +697,7 @@ function getBusStopTimeData(city,route){
     for(let i = 0 ; i < BusStopsTimeData.length ;i++){ 
 
          // 挑選去程
-        if(BusStopsTimeData[i].Direction == 0){
+        if(BusStopsTimeData[i].Direction == dir){
 
 
 

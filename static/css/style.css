@@ -803,6 +803,8 @@ select{
 }
 
 .TimeList_Switch{
+    transition: 0.5s;
+    transform: rotate(360deg);
     cursor: pointer;
     width: 45px;
     height: 45px;
