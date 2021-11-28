@@ -297,7 +297,6 @@ maxZoom: 18,
 id: 'mapbox/streets-v11',
 tileSize: 512,
 zoomOffset: -1,
-accessToken: 'pk.eyJ1IjoiamluNTc2dHciLCJhIjoiY2t3aGlmNGZpMGpkdjJ0bWRjZGtmaWdxMCJ9.oSDC9BtuuG0J37A58wNovA'
 }).addTo(StopsMap);
 
 

@@ -232,7 +232,10 @@ let SearchKey = ``
 const BusStopIcon = L.icon({
   iconUrl: 'BusStopIcon.svg',
   iconSize: [15, 15],
+  // popupAnchor: [15, 8]
 });
+
+
 
 
 // 設定地圖中心點
@@ -277,19 +280,39 @@ function setBusStopsMarker(map,data){
     // console.log(BusPosition);
 
     
+    // 車站名稱
+    let BusStopsPopup = `<div class="stationFav">
+          <h5>${data[0].Stops[i].StopName.Zh_tw}</h5>
+
+          <div class="stationFavIcon">
+
+              <svg  viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.3892 2.98091L11.3901 2.97997C12.5614 1.78542 14.3263 1.70641 15.4154 2.62328C16.7835 3.77812 16.86 5.86435 15.6303 7.11876L15.6299 7.11916L9.24846 13.632L2.8679 7.12003C2.86785 7.11997 2.86779 7.11991 2.86774 7.11986C1.64022 5.86534 1.71688 3.77829 3.0851 2.62332C4.17494 1.70575 5.94255 1.78655 7.10902 2.97855L7.11133 2.98091L7.82314 3.70589L9.25027 5.15946L10.6774 3.70589L11.3892 2.98091Z"  stroke="white" stroke-width="1"/>
+              </svg>
+
+          </div>
+               
+      </div> `
+
+
+    var BusStopsOptions =
+    {
+        'height':'300',
+        'className' : 'BusStopsPopUp'
+    }
 
     L.marker(BusPosition, {
       icon: BusStopIcon,
       opacity: 1.0
-    }).addTo(map).bindPopup("I am a circle.");;
+    }).addTo(map).bindPopup(BusStopsPopup,BusStopsOptions);
           
         
-    
+
 
 
   }
 
-  console.log(BusPositionArr);
+  // console.log(BusPositionArr);
 
   L.polyline(BusPositionArr,{color: 'var(--light_blue)',weight:5}).addTo(map)
 
