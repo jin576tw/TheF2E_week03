@@ -4,7 +4,7 @@
 // 公車首頁
 $('.navbar_logo').click(function(){
 
-    $('#LandingPage').fadeIn(800).siblings('.Bus_page').fadeOut(1)
+    $('#LandingPage').show().siblings('.Bus_page').hide()
 
     $('.Navbar').removeClass('Navbar_grey').removeClass('Navbar_white')
 
@@ -15,6 +15,8 @@ $('.navbar_logo').click(function(){
     $('.navbar_logo img').attr('src','./static/images/HelloBus_light.png')
 
     $('.navbar_page h5').css('color','white')
+
+    $('.arrowRight path').css('fill','white')
 
     $('.navbar_page,.Route_SearchWarp').hide()
 
@@ -44,7 +46,7 @@ $('.navbar_logo').click(function(){
 // 公車動態
 $('.navbarItem_warp li:nth-of-type(1),#BusName_btn').click(function(){
 
-    $('#BusStatusPage').fadeIn(800).siblings('.Bus_page').fadeOut(1)
+    $('#BusStatusPage').show().siblings('.Bus_page').hide()
     
     
     $('.Navbar').show()
@@ -57,6 +59,8 @@ $('.navbarItem_warp li:nth-of-type(1),#BusName_btn').click(function(){
     $('.navbar_logo img').attr('src','./static/images/HelloBus_light.png')
 
     $('.navbar_page h5').css('color','white')
+
+    $('.arrowRight path').css('fill','white')
 
     $('.navbar_page,.Route_SearchWarp').show()
 

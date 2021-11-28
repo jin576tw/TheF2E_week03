@@ -170,7 +170,7 @@ $('#BusRwdMap , #backBusTimeList').click(function(){
 
         $('.Navbar').removeClass('Navbar_white').addClass('Navbar_greyRWD')
 
-        
+        $('.Navbar').removeClass('Navbar_greyNavbar_greyRWD').addClass('Navbar_greyRWD')
 
         $('.navbar_logo img').attr('src','./static/images/HelloBus_light.png')
 
@@ -224,7 +224,9 @@ $('.hideTimeList').click(function(){
 
 $('#BusName_AllList').on('click','.BusName_list',function(){
 
-    $('.Navbar').removeClass('Navbar_grey').addClass('Navbar_white')
+    
+
+    $('.Navbar').removeClass('Navbar_grey').addClass('Navbar_white').removeClass('Navbar_greyRWD')
 
     $('.navbarItem_warp li').css('color','var(--bbGrey)')
 
@@ -232,12 +234,20 @@ $('#BusName_AllList').on('click','.BusName_list',function(){
 
     $('.navbar_page h5').css('color','var(--bbGrey)')
 
+    $('.arrowRight path').css('fill','var(--bbGrey)')
     $('.navbar_RWD line').css('stroke','var(--bbGrey)')
 
     $('.BusName_MapStops').css('transform', 'translateY(0%)')
 
     $('.BsContnet').css('bottom','0px')
 
+    $('.BusStop_TimeList').css('transform','translateY(0%)')
+
+    if ($(window).width() < 768) {
+
+        $('.BusStop_Map').css('transform','translateX(100%)')
+
+    }
 
     // 公車名稱
     const RouteName = $(this).attr('Route')
