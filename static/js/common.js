@@ -500,8 +500,8 @@ function setNowBusPositionMarker(TimeData,MapData,map){
   // 當車正常發車時
   if(TimeData.StopStatus == 0){
      
-    //距離站點五分鐘
-    if(TimeData.EstimateTime <= 300){
+    //距離站點三分鐘
+    if(TimeData.EstimateTime <= 180){
    
        // 從地圖資料比對
        for(let j = 0 ; j < MapData.Stops.length ;j++){ 
@@ -515,7 +515,7 @@ function setNowBusPositionMarker(TimeData,MapData,map){
 
            let BusPosition = [BusLat,BusLon]
 
-           console.log(BusPosition);
+          //  console.log(BusPosition);
 
             L.marker(BusPosition, {
               icon: BusNowIcon,
