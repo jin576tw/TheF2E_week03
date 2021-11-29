@@ -751,9 +751,14 @@ function getBusStopTimeData(city,route,dir){
             BusTime_ListArr += BusTime_List(BusStopsTimeData[i])
 
 
+            setTimeout(()=>{
 
-            // 設定公車當前位置圖示
-            setNowBusPositionMarker(BusStopsTimeData[i],BusStopsMapData[0],StopsMap)
+               // 設定公車當前位置圖示
+              setNowBusPositionMarker(BusStopsTimeData[i],BusStopsMapData[0],StopsMap)
+           
+
+            },500)
+
            
      
             
