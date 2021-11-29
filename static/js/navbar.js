@@ -101,7 +101,7 @@ $('#SearchRoute').change(function(){
 
 
 
-    console.log(SelectedRegion);
+    // console.log(SelectedRegion);
 
     SearchKey = $(this).val()
 
